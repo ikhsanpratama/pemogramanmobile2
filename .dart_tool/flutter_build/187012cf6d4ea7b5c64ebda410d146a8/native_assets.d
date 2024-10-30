@@ -1,0 +1,1 @@
+ C:\\AndroidProjects\\pemogramanmobile2\\.dart_tool\\flutter_build\\187012cf6d4ea7b5c64ebda410d146a8\\native_assets.yaml: 
