@@ -29,7 +29,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
           showProgressBar: false,
           autoCloseDuration: const Duration(seconds: 3),
           closeButtonShowType: CloseButtonShowType.none);
-    } else if (username == 'admin' && password == 'support') {
+    } else if (username == 'admin' && password == 'gudang') {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomeUts(username: username)),
@@ -41,7 +41,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
           style: ToastificationStyle.flatColored,
           type: ToastificationType.error,
           showIcon: true,
-          icon: const Icon(Icons.error),
+          icon: const Icon(Icons.dangerous),
           title: const Text('Username/Password Salah!'),
           showProgressBar: false,
           autoCloseDuration: const Duration(seconds: 3),
@@ -90,55 +90,71 @@ class _LoginScreen2State extends State<LoginScreen2> {
               SizedBox(
                 height: 20.h,
               ),
-              Image.asset(
-                "assets/flutter.png",
-                height: 150.h,
-                width: double.infinity,
+              const Center(
+                child: CircleAvatar(
+                  // radius: 100,
+                  minRadius: 60,
+                  maxRadius: 100,
+                  backgroundImage: AssetImage('assets/inventory.png'),
+                ),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              TextFormField(
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-                controller: _usernameController,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.1),
-                  hintText: 'Username : admin',
-                  hintStyle: const TextStyle(color: Colors.white54),
-                  prefixIcon: const Icon(Icons.person, color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 5.h,
-              ),
-              TextFormField(
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-                controller: _passwordController,
-                obscureText: true,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.1),
-                  hintText: 'Password : support',
-                  hintStyle: const TextStyle(color: Colors.white54),
-                  prefixIcon: const Icon(Icons.lock, color: Colors.white),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    borderSide: BorderSide.none,
-                  ),
+              Card(
+                color: Colors.transparent,
+                borderOnForeground: true,
+                elevation: 10,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.1),
+                        hintText: 'Username : admin',
+                        hintStyle: const TextStyle(color: Colors.blueGrey),
+                        prefixIcon:
+                            const Icon(Icons.person, color: Colors.blue),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    TextFormField(
+                      textAlign: TextAlign.left,
+                      style: const TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                      controller: _passwordController,
+                      obscureText: true,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.1),
+                        hintText: 'Password : gudang',
+                        hintStyle: const TextStyle(color: Colors.blueGrey),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                          color: Colors.blue,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(
@@ -147,7 +163,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
               Center(
                   child: ElevatedButton.icon(
                 onPressed: _login,
-                icon: const Icon(Icons.login_rounded, color: Colors.white),
+                icon: const Icon(Icons.verified, color: Colors.white),
                 label: const Text(
                   'M A S U K',
                   style: TextStyle(fontSize: 18, color: Colors.white),
@@ -174,9 +190,11 @@ class _LoginScreen2State extends State<LoginScreen2> {
                         style: ToastificationStyle.flatColored,
                         type: ToastificationType.success,
                         showIcon: true,
-                        icon: const Icon(Icons.face),
+                        icon: const Icon(Icons.tips_and_updates),
                         title: const Text(
-                            'Segera Minum Vitamin Penambah Daya Ingat'),
+                          'Segera Minum Vitamin Penambah Daya Ingat :)',
+                          style: TextStyle(fontSize: 12),
+                        ),
                         showProgressBar: false,
                         autoCloseDuration: const Duration(seconds: 3),
                         closeButtonShowType: CloseButtonShowType.none);
@@ -184,7 +202,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   child: const Text(
                     'Lupa Password?',
                     style: TextStyle(
-                        color: Colors.white70, fontStyle: FontStyle.italic),
+                        color: Colors.grey,
+                        fontStyle: FontStyle.italic,
+                        fontFamily: 'poppin'),
                   ),
                 ),
               ),

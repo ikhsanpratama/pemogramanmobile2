@@ -10,20 +10,19 @@ class HomeUts extends StatelessWidget {
   final List<Map<String, dynamic>> gridItems = [
     {
       'title': 'Status Perangkat',
-      'icon': Icons.pie_chart_sharp,
-      'color': Colors.lightBlue,
+      'icon': Icons.data_usage,
+      'color': Colors.redAccent,
       'page': const StatusPerangkat()
     },
     {
       'title': 'Transaksi',
-      'icon': Icons.transform,
+      'icon': Icons.receipt,
       'color': Colors.amber,
-      // ignore: prefer_const_constructors
-      'page': TransaksiPerangkat()
+      'page': const TransaksiPerangkat()
     },
     {
       'title': 'Jadwal Opname',
-      'icon': Icons.calendar_month,
+      'icon': Icons.event_note,
       'color': Colors.green,
       'page': const OpnamePerangkat()
     },
@@ -65,14 +64,14 @@ class HomeUts extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                   const Text(
-                    'Administrator',
+                    'Warehouse Manager',
                     style: TextStyle(color: Colors.black, fontSize: 14),
                   ),
                 ],
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: const Icon(Icons.store),
               selected: true,
               selectedTileColor: Colors.lightBlue,
               enabled: false,
@@ -96,7 +95,7 @@ class HomeUts extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.info),
+              leading: const Icon(Icons.privacy_tip),
               title: const Text('Tentang'),
               onTap: () {
                 Navigator.push(
@@ -107,8 +106,7 @@ class HomeUts extends StatelessWidget {
             ),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.logout),
-              iconColor: Colors.red,
+              leading: const Icon(Icons.logout_outlined),
               textColor: Colors.red,
               title: const Text('Keluar'),
               onTap: () {
@@ -134,6 +132,7 @@ class HomeUts extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = gridItems[index];
             return Card(
+              semanticContainer: true,
               color: item['color'],
               elevation: 10,
               shape: RoundedRectangleBorder(
@@ -151,7 +150,7 @@ class HomeUts extends StatelessWidget {
                   children: [
                     Icon(
                       item['icon'],
-                      size: 50,
+                      size: 100,
                       color: Colors.white,
                       applyTextScaling: true,
                     ),
