@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:pemogramanmobile_2/screens/home.dart';
 import 'package:pemogramanmobile_2/screens/setting.dart';
 import 'package:pemogramanmobile_2/screens/tentang.dart';
+import 'package:pemogramanmobile_2/screens/tugas/t_1/auth/login.dart';
 import 'package:pemogramanmobile_2/screens/tugas/t_opsional_1/tugas_1.dart';
 
 class Tugas extends StatelessWidget {
@@ -122,6 +123,20 @@ class Tugas extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                    );
+                  },
+                  child: const CupertinoCard(
+                    title: 'Tugas 1 - Login / Dashboard',
+                    icon: Icons.filter_1,
+                    color: CupertinoColors.systemGreen,
+                  ),
+                ),
               ],
             ),
           ),
