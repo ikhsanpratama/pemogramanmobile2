@@ -2,4 +2,6 @@
 Mata Kuliah Pemograman Mobile 2
 
 - Tugas Opsional 1 : Counter
-- TUgas Wajib 1 : Login Page / Dashboard + Parsed Value
+- Tugas Wajib 1 : Login Page / Dashboard + Parsed Value
+- Tugas UTS : Aplikasi IT Inventory Mobile
+

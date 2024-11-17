@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
-  fluttertoast: ^8.2.8
   toastification: ^2.3.0
+  fl_chart: ^0.68.0
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +25,5 @@ flutter:
   - assets/logo.png
   - assets/user.png
   - assets/tech.jpg
+  - assets/background.png
+  - assets/inventory.png

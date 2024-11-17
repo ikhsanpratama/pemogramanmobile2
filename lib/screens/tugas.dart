@@ -5,6 +5,7 @@ import 'package:pemogramanmobile_2/screens/setting.dart';
 import 'package:pemogramanmobile_2/screens/tentang.dart';
 import 'package:pemogramanmobile_2/screens/tugas/t_1/auth/login.dart';
 import 'package:pemogramanmobile_2/screens/tugas/t_opsional_1/tugas_1.dart';
+import 'package:pemogramanmobile_2/screens/tugas/t_uts/auth/login.dart';
 
 class Tugas extends StatelessWidget {
   final String username;
@@ -135,6 +136,21 @@ class Tugas extends StatelessWidget {
                     title: 'Tugas 1 - Login / Dashboard',
                     icon: Icons.filter_1,
                     color: CupertinoColors.systemGreen,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen2()),
+                    );
+                  },
+                  child: const CupertinoCard(
+                    title: 'Tugas UTS - Login / Dashboard',
+                    icon: Icons.filter_2,
+                    color: CupertinoColors.systemRed,
                   ),
                 ),
               ],
